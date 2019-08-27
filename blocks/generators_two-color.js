@@ -1,5 +1,4 @@
-module.exports = function(Blockly) {
-  Blockly.JavaScript["ky_011_two_color_led_block"] = function(block) {
+Blockly.JavaScript["ky_011_two_color_led_block"] = function(block) {
     var text_ky_011_two_color_led_red_pin = block.getFieldValue(
       "KY_011_TWO_COLOR_LED_RED_PIN"
     );
@@ -17,19 +16,18 @@ module.exports = function(Blockly) {
     // TODO: Assemble JavaScript into code variable.
     var code = `
     #VARIABLE
-	int KY_011_TWO_COLOR_LED_RED_PIN = ${text_ky_011_two_color_led_red_pin}; // pin for red signal
-	int KY_011_TWO_COLOR_LED_GREEN_PIN = ${variable_ky_011_two_color_led_green_value}; // pin for green signal
-	#END
+  int KY_011_TWO_COLOR_LED_RED_PIN = ${text_ky_011_two_color_led_red_pin}; // pin for red signal
+  int KY_011_TWO_COLOR_LED_GREEN_PIN = ${variable_ky_011_two_color_led_green_value}; // pin for green signal
+  #END
 
-	#SETUP
-		pinMode(KY_011_TWO_COLOR_LED_RED_PIN, OUTPUT);
-		pinMode(KY_011_TWO_COLOR_LED_GREEN_PIN, OUTPUT);
-	#END
+  #SETUP
+    pinMode(KY_011_TWO_COLOR_LED_RED_PIN, OUTPUT);
+    pinMode(KY_011_TWO_COLOR_LED_GREEN_PIN, OUTPUT);
+  #END
 
-	${variable_ky_011_two_color_led_red_value} = KY_011_TWO_COLOR_LED_RED_PIN;
-	${variable_ky_011_two_color_led_green_value} = KY_011_TWO_COLOR_LED_GREEN_PIN;
+  ${variable_ky_011_two_color_led_red_value} = KY_011_TWO_COLOR_LED_RED_PIN;
+  ${variable_ky_011_two_color_led_green_value} = KY_011_TWO_COLOR_LED_GREEN_PIN;
 
     `;
     return code;
   };
-};
